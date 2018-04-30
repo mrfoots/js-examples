@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Color Slider Demo</title>
+    <style>
+      label, output {
+        display: inline-block;
+        width: 100px;
+        padding-bottom: 10px;
+        font-size: 28px;
+      }
+      output {padding-left: 20px;}
+      .red {color: red;}
+      .green {color: green;}
+      .blue {color: blue;}
+      div#container {
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border: 8px solid black;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <label for="redRange" class="red">Red</label>
+        <input type="range" id="redRange" min="0" max="255">
+        <output class="red" id="redOutput"></output>
+      </div>
+      <div>
+        <label for="greenRange" class="green">Green</label>
+        <input type="range" id="greenRange" min="0" max="255">
+        <output class="green" id="greenOutput"></output>
+      </div>
+      <div>
+        <label for="blueRange" class="blue">Blue</label>
+        <input type="range" id="blueRange" min="0" max="255">
+        <output class="blue" id="blueOutput"></output>
+      </div>
+    </div>
+    <script>
+      let redRange = document.getElementById('redRange');
+      let redOutput = document.getElementById('redOutput');
+      redRange.value = 128;
+      redOutput.textContent = redRange.valueAsNumber;
+
+      let greenRange = document.getElementById('greenRange');
+      let greenOutput = document.getElementById('greenOutput');
+      greenRange.value = 128;
+      greenOutput.textContent = greenRange.valueAsNumber;
+
+      let blueRange = document.getElementById('blueRange');
+      let blueOutput = document.getElementById('blueOutput');
+      blueRange.value = 128;
+      blueOutput.textContent = blueRange.valueAsNumber;
+
+      function setBGColor() {
+        let r = redRange.valueAsNumber;
+        let g = greenRange.valueAsNumber;
+        let b = blueRange.valueAsNumber;
+        let color = "rgb(" + r + "," + g + "," + b + ")";
+        document.body.style.background = color;
+      }
+
+      setBGColor();
+
+      redRange.oninput = function() {
+        redOutput.textContent = redRange.valueAsNumber;
+        setBGColor();
+      }
+      greenRange.oninput = function() {
+        greenOutput.textContent = greenRange.valueAsNumber;
+        setBGColor();
+      }
+      blueRange.oninput = function() {
+        blueOutput.textContent = blueRange.valueAsNumber;
+        setBGColor();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+html {
+  background-color: cornflowerblue;
+}
+body {
+  width: 900px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, .3);
+  background-color: white;
+}
+h1 {
+  font-size: 48px;
+}
+label, input, button, li {
+  font-family: sans-serif;
+  font-size: 28px;
+  line-height: 1.5;
+}
+input {
+  width: 100px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px dashed black;
+}
+button {margin: 0 10px}
+li {list-style-type: none;}
